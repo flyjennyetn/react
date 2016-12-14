@@ -1,0 +1,95 @@
+.aboutCourse{
+  text-align: center;
+  margin-top: 1rem;
+}
+ul {
+  width: 100%;
+  li {
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid #DDDDDD;
+    .showImg {
+      padding: 0.1rem 0.2rem;
+      img {
+        width: 100%;
+      }
+    }
+    .courseMsg {
+      padding: 0.1rem 0.2rem;
+      vertical-align: middle;
+      .conText {
+        width: 100%;
+        .leftText {
+          display: inline-block;
+          width: 100%;
+          .test{
+            height: 0.6rem;
+            width: 100%;
+            .courseName {
+              width: 1.6rem;
+              height: 0.6rem;
+              line-height: 0.6rem;
+              text-align: center;
+              background: #1c98e7;
+              font-size: 1.1em;
+              color: #fff;
+              float: right;
+            }
+          }
+          .botTitle {
+            width: 100%;
+            padding: 0.1rem 0;
+            .tipLabel {
+              display: inline-block;
+              width: 0.3rem;
+              height: 0.3rem;
+              vertical-align: middle;
+              background: url("../../../images/tipLabel.png") no-repeat;
+              background-size: 100% 100%;
+            }
+            .marPad {
+              font-size: 1em;
+              display: inline-block;
+              vertical-align: middle;
+              margin-left: 10px;
+            }
+          }
+        }
+        .timeData {
+          display: block;
+          text-align: right;
+          float: right;
+          height: 0.28rem;
+          .timeSpan{
+            display: inline-block;
+            vertical-align: middle;
+            height: 0.28rem;
+            width: 0.28rem;
+            background: url("../../../images/time.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          .time {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1em;
+            margin-left: 10px;
+          }
+        }
+      }
+      .score {
+        width: 100%;
+        span {
+          font-size: 1em;
+          display: inline-block;
+          width: 32%;
+        }
+      }
+    }
+  }
+  .noCourse {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 2em;
+    color: #ff0000;
+  }
+}

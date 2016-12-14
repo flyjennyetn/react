@@ -1,0 +1,88 @@
+.userCenter {
+  width: 100%;
+  background: #ffffff;
+  overflow: auto;
+  .basicMenu {
+    padding: 0.3rem 0.3rem;
+    background: #f4f4f4;
+    text-align: center;
+    .classMsg {
+      margin: 0.1rem 0;
+      display: inline-block;
+      width: 48%;
+      .circular {
+        width: 1.8rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
+        border-radius: 50%;
+        background: #ffffff;
+        display: inline-block;
+        span {
+          display: inline-block;
+          vertical-align:middle;
+        }
+        .iconImg1{
+          background: url("../../../images/userMsg.png") no-repeat;
+          background-size:100% 100%;
+          width: 0.54rem;
+          height: 0.41rem;
+        }        
+        .iconImg2{
+          background: url("../../../images/myCourses.png") no-repeat;
+          background-size:100% 100%;
+          width: 0.43rem;
+          height: 0.43rem;   
+        }        
+        .iconImg3{
+          background: url("../../../images/changeMsg.png") no-repeat;
+          background-size:100% 100%;
+          width: 0.44rem;
+          height: 0.44rem;        
+        }        
+        .iconImg4{
+          background: url("../../../images/changePwd.png") no-repeat;
+          background-size:100% 100%;
+          width: 0.38rem;
+          height: 0.43rem;   
+        }
+      }
+      .textMsg {
+        font-size: 1.2em;
+        padding: 0.1rem 0;
+        a{
+          color: #818181;
+        }
+      }
+    }
+  }
+  .footer {
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    bottom: 0;
+    background: #f6f2f1;
+    border-top: 1px solid #cdcdcd;
+    .menu {
+      width: 90%;
+      margin: 0 auto;
+      div {
+        display: inline-block;
+        width: 31%;
+        text-align: center;
+        padding: 0.5rem 0;
+        span {
+          display: inline-block;
+          width: 0.8rem;
+          height: 0.8rem;
+          img{
+            height: 100%;
+          }
+        }
+        .textInfo {
+          width: 100%;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}

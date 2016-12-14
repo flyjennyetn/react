@@ -1,0 +1,43 @@
+.coursesMenu {
+  width: 100%;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  position: relative;
+  padding-top: 1rem;
+  .menuCon {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    .menuName {
+      width: 47%;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      height: 0.7rem;
+      line-height: 0.7rem;
+      font-size: 1.4em;
+      margin:0 5px;
+    }
+    .bgColor{
+      color: #fff;
+      background: #2bac64;
+    }
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 0.6rem;
+      margin-left: 0.3rem;
+    }
+    .selectUp {
+      display: none;
+    }
+    .selectUp1 {
+      display: none;
+    }
+  }
+  .menuLine {
+    border-left: 1px solid #e3e3e3;
+  }
+}
