@@ -1,15 +1,17 @@
-// Use require.context to require reducers automatically
-// Ref: https://webpack.github.io/docs/context.html
-const context = require.context('./', false, /\.js$/);
-const keys = context.keys().filter(item => item !== './index.js');
-const reducers = keys.reduce((memo, key) => {
-	let redux = context(key);
-	if (typeof redux != 'function') {
-		redux = redux['default'];
-	}
-	memo[key.match(/([^\/]+)\.js$/)[1]] = redux;
-	return memo;
-}, {});
+import { combineReducers } from 'redux'
 
+import courses from './courses'
+import quizzes from './quizzes'
+import subject from './subject'
+import user from './user'
+import userPwd from './userPwd'
 
-export default reducers;
+const rootReducer = combineReducers({
+	courses,
+	quizzes,
+	subject,
+	user,
+	userPwd
+});
+
+export default rootReducer;

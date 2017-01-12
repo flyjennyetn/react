@@ -1,17 +1,18 @@
-import {
-	fork
-} from 'redux-saga/effects';
+/**
+ * Created by flyjennyetn on 2016-10-24.
+ */
+import login from './login'
+import courses from './courses'
+import quizzes from './quizzes'
+import subject from './subject'
+import user from './user'
+import userPwd from './userPwd'
 
-const context = require.context('./', false, /\.js$/);
-const keys = context.keys().filter(item => item !== './index.js' && item !== './SagaManager.js');
-
-export default function* root() {
-	for (let i = 0; i < keys.length; i++) {
-		let saga = context(keys[i]);
-		if (typeof saga == 'function') {
-			yield fork(saga);
-		} else {
-			yield fork(saga.default);
-		}
-	}
+export default function* rootSaga() {
+	yield* login();
+	yield* courses();
+	yield* quizzes();
+	yield* subject();
+	yield* user();
+	yield* userPwd();
 }
