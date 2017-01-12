@@ -1,13 +1,12 @@
 
 
 ## [react](https://github.com/flyjennyetn/react)
- * * *
+
   react 开发框架，集成[redux]( http://cn.redux.js.org/index.html)，[react-router](http://leonshi.com/redux-saga-in-chinese/index.html)，[redux-saga](http://www.uprogrammer.cn/react-router-cn/  )，[CSS Modules ](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，
  [redux-actions](https://www.npmjs.com/package/redux-actions) 
 
 
 ##特性
- * * *
 
 *  加入了Autoprefixer，可以使用一个数据库根据当前浏览器的普及度以及属性支持提供给你前缀；
 *  省时的浏览器同步测试工具；
@@ -16,14 +15,12 @@
 * css语法糖 ，简写模式。
 
 ##安装
- * * *
->npm install
->npm start
->npm build
+* npm install
+* npm start
+* npm build
 
 ##项目目录结构
- * * *
->react-master               &nbsp; &nbsp; # 项目根目录
+```react-master```               &nbsp; &nbsp; # 项目根目录
 ```sh
 ├─ src                    # 项目配置文件
     ├── fonts            # 字体库
@@ -50,9 +47,8 @@
  
 
 ##开发流程
- * * *
-```server.js```  默认本地开发端口，可修改
-* * *
+#### ```server.js```  默认本地开发端口，可修改
+ 
 ```js
 ...
   port: 8888,  本地浏览器开发地址
@@ -62,9 +58,9 @@
 ...
 ```
   <br/>
-```src/js/index.js``` 架构配置文件，无需修改 
-* * *
-
+  
+#### ```src/js/index.js``` 架构配置文件，无需修改 
+ 
 ```js
 import "babel-polyfill"  //解决babel ES6 新的API
 import React from 'react'
@@ -156,9 +152,8 @@ hashHistory.listen(location => {
 
 
 ```
-```src/js/containers/routes.js``` 
-* * *
-
+#### ```src/js/containers/routes.js``` 
+ 
 ```js
 import React, {PropTypes} from 'react';
 import {Provider} from 'react-redux'
@@ -211,8 +206,9 @@ function Routes({
 
 export default Routes;
 ```
-```src/js/reducers/index.js``` 架构配置文件，无需修改 
-* * *
+
+#### ```src/js/reducers/index.js```  架构配置文件，无需修改 
+ 
 ```js
 //负责处理action的state更新，配置入口，每一个模块的动作配置载人
 import { combineReducers } from 'redux'
@@ -232,8 +228,9 @@ export default rootReducer;
 ``` 
 配置入口，载入不同的模块，导出已完成更新的集合
 <br/>
-```src/js/sagas/index.js``` 
-* * *
+
+#### ```src/js/sagas/index.js``` 
+ 
 ```js
 import login from './login'
 import courses from './courses'
@@ -248,9 +245,10 @@ export default function* rootSaga() {
 	yield* subject();
 	yield* user();
 }
-```    
-```src/js/reducers/courses.js```  
-* * *
+```  
+  
+#### ```src/js/reducers/courses.js```  
+  
 ```js
 import {handleActions} from 'redux-actions';
 import {combineReducer} from 'redux'
@@ -305,8 +303,9 @@ export default courses;
 ```
 
 <br/>
-```src/js/sagas/courses.js``` 
-* * *
+
+####```src/js/sagas/courses.js``` 
+  
 ```js
 import xFetch from '../services/xFetch'; //引入封装的异步请求
 import qs from 'qs'; 
@@ -398,8 +397,8 @@ export default function*() {
 ```
 协调处理异步操作，function后带```“*”```，表示函数执行是按行的，不允许跳行，```call```调用当前方法，以获取到的值替换当前的值，```put```调用当前方法。
 <br/>
-```src/js/containers/Courses/index.jsx``` 课程页（容器）
-* * *
+#### ```src/js/containers/Courses/index.jsx``` 课程页（容器）
+
 ```js
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
@@ -487,8 +486,8 @@ export default connect(mapStateToProps)(Courses)
 页面作为一个容器，获取需要的中间键，然后结合
 <br/>
 
-```src/js/components/CouresesList/index.jsx``` 课程列表页
-* * *
+####```src/js/components/CouresesList/index.jsx``` 课程列表页
+ 
 ```js
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
@@ -596,8 +595,10 @@ class CouresesList extends Component {
 export default CouresesList
 
 ```
+
 ##使用说明
 该项目是使用```redux```架构构建，文件目录结构和代码结构是为了通用适配以下两个项目的原生开发和微信小程序开发，请勿修改。
+
 ##links
-[react-native]( https://github.com/flyjennyetn/react-native)
-[wechat-react](https://github.com/flyjennyetn/wechat-react)
+* [react-native]( https://github.com/flyjennyetn/react-native)
+* [wechat-react](https://github.com/flyjennyetn/wechat-react)
