@@ -1,22 +1,18 @@
 
 
 ## [react](https://github.com/flyjennyetn/react)
+>```注意``` 使用本框架前请先学习[es6](http://es6.ruanyifeng.com/)相关知识和[react](http://www.ruanyifeng.com/blog/2015/03/react.html)基础知识。
 
   react 开发框架，集成[redux]( http://cn.redux.js.org/index.html)，[react-router](http://leonshi.com/redux-saga-in-chinese/index.html)，[redux-saga](http://www.uprogrammer.cn/react-router-cn/  )，[CSS Modules ](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，
- [redux-actions](https://www.npmjs.com/package/redux-actions) 
+ [redux-actions](https://www.npmjs.com/package/redux-actions) ，使用webpack构建
+ 
 
-
-##特性
-
-*  加入了Autoprefixer，可以使用一个数据库根据当前浏览器的普及度以及属性支持提供给你前缀；
-*  省时的浏览器同步测试工具；
-*  加入 [browserSync](https://segmentfault.com/a/1190000002607627) 服务
-* 加入react热加载；
-* css语法糖 ，简写模式。
 
 ##安装
 * npm install
+
 * npm start
+
 * npm build
 
 ##项目目录结构
@@ -602,3 +598,11 @@ export default CouresesList
 ##links
 * [react-native]( https://github.com/flyjennyetn/react-native)
 * [wechat-react](https://github.com/flyjennyetn/wechat-react)
+
+##贡献者
+[北京天融互联科技有限](http://www.e-tianrong.com/)
+[flyjennyetn](https://github.com/flyjennyetn)
+[荣倩倩](rongqianqian@-tianrong.com)
+
+##开源协议
+本项目依据MIT开源协议发布，允许任何组织和个人免费使用。
