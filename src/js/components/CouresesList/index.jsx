@@ -39,7 +39,7 @@ class CouresesList extends Component {
         const {coursesState,items,videoId,animating} = this.props.courses;
         return (
             <div>
-                <ul className={styles.upTerm} >
+                <ul className={styles.upTerm}>
                     {isNotNullObj(items) && items.lessonInfoList.map((el,i)=>
                         <li key={i}>
                             <div className={styles.showImg} onClick={()=>this.getVideoId(el.lessonId)}>
@@ -71,9 +71,10 @@ class CouresesList extends Component {
                                 <div className={styles.score} >
                                     <span>课程分数：<font color="#0BBA38">{el.lessonScore}分</font></span>
                                     <span>年级排名：<font color="#0288E9">第{el.gradeRanke}名</font></span>
-                                    <span>班级排名：<font color="#1CB7B9">第{el.classRanke}名</font></span>
+                                    <span>班级排名：<font color="#1CB7B9">第{el.classNameRanke}名</font></span>
                                 </div>
                                 }
+
                             </div>
                         </li>
                     )}

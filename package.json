@@ -1,5 +1,5 @@
 {
-  "name": "step-04",
+  "name": "react",
   "version": "1.0.0",
   "description": "react react-router redux",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "webpack",
     "npm"
   ],
-  "author": "minooo",
+  "author": "flyjennyetn",
   "license": "MIT",
   "dependencies": {
     "antd-mobile": "^0.9.5",

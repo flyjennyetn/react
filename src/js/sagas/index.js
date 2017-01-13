@@ -1,6 +1,3 @@
-/**
- * Created by flyjennyetn on 2016-10-24.
- */
 import login from './login'
 import courses from './courses'
 import quizzes from './quizzes'

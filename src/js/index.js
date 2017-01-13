@@ -18,7 +18,7 @@ import {
     Provider
 } from 'react-redux'
 import {
-    browserHistory,hashHistory
+    browserHistory
 } from 'react-router'
 import {
     syncHistoryWithStore,
@@ -96,10 +96,3 @@ if (module.hot) {
 
     });
 }
-
-hashHistory.listen(location => {
-    console.log(location);
-  if (location.action === 'POP' && location.pathname === '/users') {
-
-  }
-});

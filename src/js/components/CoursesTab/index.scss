@@ -4,6 +4,131 @@
   border-bottom: 1px solid #e3e3e3;
   position: relative;
   padding-top: 1rem;
+  .menuInfoCon {
+    position: absolute;
+    width: 50%;
+    top: 2.0rem;
+    left: 1px;
+    background: #ffffff;
+    //border: 1px solid #E3E3E3;
+    display: none;
+    .upTab {
+      width: 100%;
+      position: absolute;
+      top: -8px;
+    }
+    .upClose {
+      //position: absolute;
+      //top: -6px;
+      //left: 45%;
+      //width: 12px;
+      //height: 10px;
+      //background: #fff;
+      //border-top: 1px solid #E3E3E3;
+      //border-left: 1px solid #E3E3E3;
+      //transform: rotate(45deg);
+      width: 100%;
+      position: absolute;
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+    div {
+      height: 3rem;
+      line-height: 3rem;
+      text-align: center;
+    }
+    .lines {
+      color: #1c98e7;
+      border-bottom: 1px solid #E3E3E3;
+      position: relative;
+      .trueImg {
+        display: inline-block;
+        width: 15%;
+        position: absolute;
+        left: 15%;
+        img {
+          width: 100%;
+        }
+      }
+      .textCon {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    .unLines {
+      border-bottom: 1px solid #E3E3E3;
+      position: relative;
+      .trueImg {
+        display: none;
+      }
+      .textCon {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+  .menuInfoCon1 {
+    position: absolute;
+    width: 50%;
+    top: 2.0rem;
+    right: 1px;
+    background: #ffffff;
+    //border: 1px solid #E3E3E3;
+    display: none;
+    .upTab {
+      width: 100%;
+      position: absolute;
+      top: -8px;
+    }
+    .upClose {
+      width: 100%;
+      position: absolute;
+      img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+      }
+    }
+    div {
+      height: 3rem;
+      line-height: 3rem;
+      text-align: center;
+    }
+    .lines {
+      color: #1c98e7;
+      border-bottom: 1px solid #E3E3E3;
+      position: relative;
+      .trueImg {
+        display: inline-block;
+        width: 15%;
+        position: absolute;
+        left: 15%;
+        img {
+          width: 100%;
+        }
+      }
+      .textCon {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    .unLines {
+      border-bottom: 1px solid #E3E3E3;
+      position: relative;
+      .trueImg {
+        display: none;
+      }
+      .textCon {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
   .menuCon {
     display: inline-block;
     text-align: center;

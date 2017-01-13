@@ -8,7 +8,7 @@ import {
 	combineReducer
 } from 'redux';
 
-const quizzes = handleActions({
+const courses = handleActions({
 	['quizzes/qurery/questions/success'](state, action) {
 		return {
 			...state,
@@ -39,4 +39,4 @@ const quizzes = handleActions({
 	exam: []
 });
 
-export default quizzes;
+export default courses;

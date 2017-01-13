@@ -1,7 +1,7 @@
 /**
  * Created by flyjennyetn on 2016-10-26.
  */
-import xFetch from '../tools/xFetch';
+import xFetch from '../services/xFetch';
 import {
 	takeLatest
 } from 'redux-saga';
