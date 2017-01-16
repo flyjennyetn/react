@@ -4,7 +4,7 @@
 >```注意``` 使用本框架前请先学习[es6](http://es6.ruanyifeng.com/)相关知识和[react](http://www.ruanyifeng.com/blog/2015/03/react.html)基础知识。
 
   react 开发框架，集成[redux]( http://cn.redux.js.org/index.html)，[react-router](http://leonshi.com/redux-saga-in-chinese/index.html)，[redux-saga](http://www.uprogrammer.cn/react-router-cn/  )，[CSS Modules ](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，
- [redux-actions](https://www.npmjs.com/package/redux-actions) ，使用webpack构建
+ [redux-actions](https://www.npmjs.com/package/redux-actions) ，使用webpack构建。
  
 
 
@@ -22,19 +22,19 @@
     ├── fonts            # 字体库
     ├── images           # 图片库
     ├── js   
-         ├──components   # 组件库
-         ├── containers  # 容器/页
-         ├── reducers   # 负责处理action的state更新。
-         ├── sagas      # 负责协调那些复杂或异步的操作。
-         ├── tools      # 工具库
-         ├── index.js   # 配置入口文件
+         ├── components   # 组件库
+         ├── pages        # 容器/页
+         ├── reducers     # 负责处理action的state更新。
+         ├── sagas        # 负责协调那些复杂或异步的操作。
+         ├── utils        # 工具库
+         ├── index.js     # 配置入口文件
     ├──styles 
-    ├── favicon.ico   # 公共工具库类
-    ├──index.ejs      # 模板文件
-├─ .babelrc        [#babel配置文件](https://inv-veri.chinatax.gov.cn/)
-├─ package.json     # 包配置
+    ├── favicon.ico       # 公共工具库类
+    ├──index.ejs          # 模板文件
+├─ .babelrc               [#babel配置文件](https://inv-veri.chinatax.gov.cn/)
+├─ package.json           # 包配置
 ├── README.md   
-├── server.js      # 服务文件配置
+├── server.js            # 服务文件配置
 ├── webpack-dev-config.js [# 开发构建配置](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
 ├── webpack-pro-config.js  # 正式环境配置
 ├── webpack-public-path.js  # 开发地址配置
@@ -72,7 +72,7 @@ import createLogger from 'redux-logger'
 
 import ReducersManager from './reducers/' #项目动作配置入口
 import SagaManager from './sagas/'     #项目sagas配置入口
-import Routes from './containers/routes' #项目路由集合
+import Routes from './pages/routes' #项目路由集合
 //创建中间键
 const sagaMiddleware = createSagaMiddleware()
 
@@ -127,8 +127,8 @@ if (module.hot) {
             orgError.apply(console, [message]);
         }
     };
-    module.hot.accept('./containers/routes', () => {
-        const NextApp = require('./containers/routes').default;
+    module.hot.accept('./pages/routes', () => {
+        const NextApp = require('./pages/routes').default;
         ReactDOM.render(
             <AppContainer>
                 <NextApp store={store} history={history}/>
@@ -148,7 +148,7 @@ hashHistory.listen(location => {
 
 
 ```
-#### ```src/js/containers/routes.js``` 
+#### ```src/js/pages/routes.js``` 
  
 ```js
 import React, {PropTypes} from 'react';
@@ -214,10 +214,10 @@ import subject from './subject'
 import user from './user'
 
 const rootReducer = combineReducers({
-	courses,
-	quizzes,
-	subject,
-	user
+    courses,
+    quizzes,
+    subject,
+    user
 });
 //导出所有本地状态更新集合
 export default rootReducer;
@@ -235,11 +235,11 @@ import subject from './subject'
 import user from './user'
 //导出所有异步动态数据处理集合
 export default function* rootSaga() {
-	yield* login();
-	yield* courses();
-	yield* quizzes();
-	yield* subject();
-	yield* user();
+    yield* login();
+    yield* courses();
+    yield* quizzes();
+    yield* subject();
+    yield* user();
 }
 ```  
   
@@ -255,44 +255,44 @@ const courses = handleActions({
 state ---代表当前的数据 
 action---接收需要更新的数据
 */
-	['courses/qurery/success'](state, action) {
-		return {
-			...state,  //获取定义的数据
-			//重新赋值然后传递出去
-			items: action.coursesUp,
-			coursesUp: action.coursesUp,
-			coursesDown: action.coursesDown
-		};
-	},
-	['courses/set/videoId'](state, action) {
-		return {
-			...state,
-			videoId: action.videoId,
-			animating: false
-		};
-	},
-	['courses/animating/state'](state, action) {
-		return {
-			...state,
-			animating: action.animating
-		};
-	},
-	['courses/set/state'](state, action) {
-		return {
-			...state,
-			items: action.coursesState == 1 ? state.coursesUp : state.coursesDown,
-			coursesState: action.coursesState
-		};
-	}
+    ['courses/qurery/success'](state, action) {
+        return {
+            ...state,  //获取定义的数据
+            //重新赋值然后传递出去
+            items: action.coursesUp,
+            coursesUp: action.coursesUp,
+            coursesDown: action.coursesDown
+        };
+    },
+    ['courses/set/videoId'](state, action) {
+        return {
+            ...state,
+            videoId: action.videoId,
+            animating: false
+        };
+    },
+    ['courses/animating/state'](state, action) {
+        return {
+            ...state,
+            animating: action.animating
+        };
+    },
+    ['courses/set/state'](state, action) {
+        return {
+            ...state,
+            items: action.coursesState == 1 ? state.coursesUp : state.coursesDown,
+            coursesState: action.coursesState
+        };
+    }
 }, 
 //定义默认初始状态、数据
 {
-	coursesState: 1,
-	items: {},
-	coursesUp: {},
-	coursesDown: {},
-	videoId: '',
-	animating: true
+    coursesState: 1,
+    items: {},
+    coursesUp: {},
+    coursesDown: {},
+    videoId: '',
+    animating: true
 });
 
 export default courses;
@@ -309,60 +309,60 @@ import {takeLatest} from 'redux-saga';
 import {take,put,call,fork,select} from 'reduxsaga/effects';
 import {browserHistory} from 'react-router';
 function* coursesQuery({token}) {
-	const coursesUp = yield call(xFetch, {
-	//三个参数，第一个接口地址，第二个解析过的值，第三个其他参数
-	requestUrl:'interface/getLessonInfoByStuNoForCenter.json',
-		token,
-		stuTerm: 1
-	});
-	const coursesDown = yield call(xFetch, {
-		requestUrl: 'interface/getLessonInfoByStuNoForCenter.json',
-		token,
-		stuTerm: 2
-	});
-	//返回数据结果
-	yield put({
-		type: 'courses/qurery/success',
-		coursesUp,
-		coursesDown
-	});
+    const coursesUp = yield call(xFetch, {
+    //三个参数，第一个接口地址，第二个解析过的值，第三个其他参数
+    requestUrl:'interface/getLessonInfoByStuNoForCenter.json',
+        token,
+        stuTerm: 1
+    });
+    const coursesDown = yield call(xFetch, {
+        requestUrl: 'interface/getLessonInfoByStuNoForCenter.json',
+        token,
+        stuTerm: 2
+    });
+    //返回数据结果
+    yield put({
+        type: 'courses/qurery/success',
+        coursesUp,
+        coursesDown
+    });
 }
 
 function* queryVideoId({
-	token,
-	lessonId
+    token,
+    lessonId
 }) {
-	const videoId = yield call(xFetch, {
-		requestUrl: 'interface/getLessonVideoId',
-		token,
-		lessonId
-	});
-	yield put({
-		type: 'courses/set/videoId',
-		videoId,
-	});
+    const videoId = yield call(xFetch, {
+        requestUrl: 'interface/getLessonVideoId',
+        token,
+        lessonId
+    });
+    yield put({
+        type: 'courses/set/videoId',
+        videoId,
+    });
 }
 
 function* isLearning({
-	token,
-	grade,
-	lessonId
+    token,
+    grade,
+    lessonId
 }) {
-	const study = yield call(xFetch, {
-		requestUrl: 'interface/queryIfExam.json',
-		token,
-		lessonId
-	});
-	if (study.isPassStudy == 1) {
-		browserHistory.push({
-			pathname: '/courses/quizzes',
-			state: {
-				lessonId
-			}
-		});
-	} else {
-		alert("请先学习课程！")
-	}
+    const study = yield call(xFetch, {
+        requestUrl: 'interface/queryIfExam.json',
+        token,
+        lessonId
+    });
+    if (study.isPassStudy == 1) {
+        browserHistory.push({
+            pathname: '/courses/quizzes',
+            state: {
+                lessonId
+            }
+        });
+    } else {
+        alert("请先学习课程！")
+    }
 }
 /*
 监听一个请求课程数据
@@ -374,26 +374,26 @@ function* watchCourses() {
 courses/query---动作名
 coursesQuery---要触发的方法，即函数名称
 */
-	yield takeLatest('courses/query', coursesQuery);
+    yield takeLatest('courses/query', coursesQuery);
 }
 
 function* watchVideoId() {
-	yield takeLatest('courses/get/videoId', queryVideoId);
+    yield takeLatest('courses/get/videoId', queryVideoId);
 }
 
 function* watchLearning() {
-	yield takeLatest('courses/learning', isLearning);
+    yield takeLatest('courses/learning', isLearning);
 }
 //创建动作监听
 export default function*() {
-	yield fork(watchCourses);
-	yield fork(watchVideoId);
-	yield fork(watchLearning);
+    yield fork(watchCourses);
+    yield fork(watchVideoId);
+    yield fork(watchLearning);
 }
 ```
 协调处理异步操作，function后带```“*”```，表示函数执行是按行的，不允许跳行，```call```调用当前方法，以获取到的值替换当前的值，```put```调用当前方法。
 <br/>
-#### ```src/js/containers/Courses/index.jsx``` 课程页（容器）
+#### ```src/js/pages/Courses/index.jsx``` 课程页（容器）
 
 ```js
 import React, {Component, PropTypes} from 'react'
@@ -405,7 +405,7 @@ import Navigation from '../../components/Navigation'
 import CoursesTab from '../../components/CoursesTab'
 import CouresesList from '../../components/CouresesList'
 //引入工具、方法
-import {userVerify} from '../../tools/common';
+import {userVerify} from '../../utils/common';
 //创建一个组件
 class Courses extends Component {
 //定义初始状态（数据）
@@ -419,7 +419,7 @@ class Courses extends Component {
         
         //指派一个动作
         this.props.dispatch({
-	        type:'courses/query',
+            type:'courses/query',
             token:this.state.userData.token
         })
     }
@@ -490,8 +490,8 @@ import {connect} from 'react-redux'
 import {ActivityIndicator,Modal} from 'antd-mobile'
 import moment from 'moment'
 import Video from '../../components/Video'
-import {isNotNullObj,userVerify} from '../../tools/common';
-import {IMGADDRESS} from '../../tools/config';
+import {isNotNullObj,userVerify} from '../../utils/common';
+import {IMGADDRESS} from '../../utils/config';
 import styles from './index.scss'
 
 class CouresesList extends Component {
@@ -592,6 +592,51 @@ export default CouresesList
 
 ```
 
+####```src/js/utils/xFetch.js``` 
+ 
+```js
+//ajax请求方法==xFetch
+function xFetch(options) {
+    const opts = {...options};
+    opts.headers = {
+        ...opts.headers
+        // ,authorization: cookie.get('authorization') || '',
+    };
+    return fetch(`${IPLOCATION + opts.requestUrl}?${qs.stringify(opts)}`, opts)
+        .then(check401)
+        .then(check404)
+        .then(jsonParse)
+        .then(errorMessageParse);
+}
+```
+作为一个公共方法，内部结构不同，但是必须要保证方法名称的一致，这样无论是在web端还是原生或者是微信小程序里，页面逻辑都可以复用，而且容易修改。（如下例所示）
+
+####```src/js/sagas/courses.js``` 
+ 
+```js
+function* coursesQuery({
+    token
+}) {
+//调用xFetch方法，只需要传参数就行
+    const coursesUp = yield call(xFetch, {
+        requestUrl: 'interface/getLessonInfoByStuNoForCenter.json',
+        token,
+        stuTerm: 1
+    });
+    const coursesDown = yield call(xFetch, {
+        requestUrl: 'interface/getLessonInfoByStuNoForCenter.json',
+        token,
+        stuTerm: 2
+    });
+    yield put({
+        type: 'courses/qurery/success',
+        coursesUp,
+        coursesDown
+    });
+}
+
+```
+
 ##使用说明
 该项目是使用```redux```架构构建，文件目录结构和代码结构是为了通用适配以下两个项目的原生开发和微信小程序开发，请勿修改。
 
@@ -601,9 +646,7 @@ export default CouresesList
 
 ##贡献者
 [北京天融互联科技有限](http://www.e-tianrong.com/)
-
 [flyjennyetn](https://github.com/flyjennyetn)
-
 [荣倩倩](rongqianqian@-tianrong.com)
 
 ##开源协议
