@@ -3,7 +3,7 @@
  */
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
-import {polyvObjects} from '../../tools/common';
+import {polyvObjects} from '../../utils/common';
 import styles from './index.scss'
 
 class Video extends Component {

@@ -9,7 +9,7 @@ import cookie from 'js-cookie';
 import Header from '../../components/Header'
 import Navigation from '../../components/Navigation'
 import UserPortrait from '../../components/UserPortrait'
-import {userVerify} from '../../tools/common';
+import {userVerify} from '../../utils/common';
 import styles from './Pwd.scss';
 
 class UserPwd extends Component {

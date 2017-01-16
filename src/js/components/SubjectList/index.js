@@ -5,8 +5,8 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {ActivityIndicator,Modal} from 'antd-mobile'
 import cookie from 'js-cookie';
-import {isNotNullObj,userVerify} from '../../tools/common';
-import {IMGADDRESS} from '../../tools/config';
+import {isNotNullObj,userVerify} from '../../utils/common';
+import {IMGADDRESS} from '../../utils/config';
 import styles from './index.scss'
 
 function SubjectList ({items,dispatch}) {

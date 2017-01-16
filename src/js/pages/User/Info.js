@@ -5,8 +5,8 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import cookie from 'js-cookie';
 import Header from '../../components/Header'
-import {IMGADDRESS} from '../../tools/config';
-import {userVerify} from '../../tools/common';
+import {IMGADDRESS} from '../../utils/config';
+import {userVerify} from '../../utils/common';
 import styles from './Info.scss'
 
 

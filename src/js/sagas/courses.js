@@ -1,7 +1,7 @@
 /**
  * Created by flyjennyetn on 2016-10-26.
  */
-import xFetch from '../tools/xFetch';
+import xFetch from '../utils/xFetch';
 import qs from 'qs';
 import {
 	takeLatest

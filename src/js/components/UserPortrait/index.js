@@ -8,8 +8,8 @@ import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import {browserHistory} from 'react-router';
 import cookie from 'js-cookie';
-import {IMGADDRESS,IPLOCATION} from '../../tools/config';
-import {userVerify} from '../../tools/common';
+import {IMGADDRESS,IPLOCATION} from '../../utils/config';
+import {userVerify} from '../../utils/common';
 import styles from './index.scss'
 
 

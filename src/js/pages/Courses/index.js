@@ -8,7 +8,7 @@ import Header from '../../components/Header'
 import Navigation from '../../components/Navigation'
 import CoursesTab from '../../components/CoursesTab'
 import CouresesList from '../../components/CouresesList'
-import {userVerify} from '../../tools/common';
+import {userVerify} from '../../utils/common';
 
 class Courses extends Component {
     state = {

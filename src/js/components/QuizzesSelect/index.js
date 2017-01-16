@@ -3,7 +3,7 @@
  */
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
-import {IMGADDRESS} from '../../tools/common';
+import {IMGADDRESS} from '../../utils/common';
 import styles from './index.scss'
 
 function QuizzesSelect ({

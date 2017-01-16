@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import cookie from 'js-cookie';
 import SubjectDetails from '../../components/SubjectDetails'
 import Navigation from '../../components/Navigation'
-import {polyvObjects,userVerify} from '../../tools/common';
+import {polyvObjects,userVerify} from '../../utils/common';
 class Details extends Component {
     state={
         userData : userVerify(cookie.get('userData'),'登录才能学习课程'),

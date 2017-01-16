@@ -6,8 +6,8 @@ import {connect} from 'react-redux'
 import {ActivityIndicator,Modal} from 'antd-mobile'
 import moment from 'moment'
 import Video from '../../components/Video'
-import {isNotNullObj,userVerify} from '../../tools/common';
-import {IMGADDRESS} from '../../tools/config';
+import {isNotNullObj,userVerify} from '../../utils/common';
+import {IMGADDRESS} from '../../utils/config';
 import styles from './index.scss'
 
 class CouresesList extends Component {

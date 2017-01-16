@@ -2,7 +2,7 @@ import fetch from 'fetch-jsonp';
 import qs from 'qs';
 import {
 	IPLOCATION
-} from '../tools/config';
+} from '../utils/config';
 
 const errorMessages = (res) => `${res.status} ${res.statusText}`;
 

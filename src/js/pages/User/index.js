@@ -7,7 +7,7 @@ import { Link } from 'react-router'
 import cookie from 'js-cookie';
 import Navigation from '../../components/Navigation'
 import UserPortrait from '../../components/UserPortrait'
-import {userVerify} from '../../tools/common';
+import {userVerify} from '../../utils/common';
 import styles from './index.scss';
 
 class User extends Component {

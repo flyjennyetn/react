@@ -1,7 +1,7 @@
 /**
  * Created by flyjennyetn on 2016-10-26.
  */
-import xFetch from '../tools/xFetch';
+import xFetch from '../utils/xFetch';
 import {
 	takeLatest
 } from 'redux-saga';
@@ -42,7 +42,8 @@ function* learningThematic({
 		stuCode
 	})
 	browserHistory.push({
-		pathname: '/subject/' + thematicNum
+		pathname: '/subject/12'
+		// pathname: '/subject/' + thematicNum
 	});
 }
 

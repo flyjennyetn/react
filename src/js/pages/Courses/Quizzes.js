@@ -8,7 +8,7 @@ import cookie from 'js-cookie';
 import Navigation from '../../components/Navigation'
 import QuizzesRadio from '../../components/QuizzesRadio'
 import QuizzesSelect from '../../components/QuizzesSelect'
-import {isNotNullObj,userVerify} from '../../tools/common';
+import {isNotNullObj,userVerify} from '../../utils/common';
 import styles from './quizzes.scss';
 class Quizzes extends Component {
     state = {

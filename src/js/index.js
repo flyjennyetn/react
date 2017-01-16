@@ -31,7 +31,7 @@ import createLogger from 'redux-logger'
 
 import ReducersManager from './reducers/'
 import SagaManager from './sagas/'
-import Routes from './containers/routes'
+import Routes from './pages/routes'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -85,8 +85,8 @@ if (module.hot) {
             orgError.apply(console, [message]);
         }
     };
-    module.hot.accept('./containers/routes', () => {
-        const NextApp = require('./containers/routes').default;
+    module.hot.accept('./pages/routes', () => {
+        const NextApp = require('./pages/routes').default;
         ReactDOM.render(
             <AppContainer>
                 <NextApp store={store} history={history}/>
