@@ -6,7 +6,7 @@
   react 开发框架，集成[redux]( http://cn.redux.js.org/index.html)，[react-router](http://leonshi.com/redux-saga-in-chinese/index.html)，[redux-saga](http://www.uprogrammer.cn/react-router-cn/  )，[CSS Modules ](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，
  [redux-actions](https://www.npmjs.com/package/redux-actions) ，使用webpack构建。
  
-
+本框架是为了解决了多平台开发（[web](https://github.com/flyjennyetn/react)，[原生](https://github.com/flyjennyetn/react-native)，[微信小程序](https://github.com/flyjennyetn/wechat-react)）使用一套标准架构，节约开发成本。组件化开发复用之高能快速搭建一个项目。加入了号称渲染速度最快的虚拟DOM，使用redux数据流控制，让项目逻辑清晰可维护。用webpack构建强力压缩代码，尽可能减小程序体积，让你在1M的限制内做更多的事。
 
 ##安装
 * npm install
@@ -28,15 +28,15 @@
          ├── sagas        # 负责协调那些复杂或异步的操作。
          ├── utils        # 工具库
          ├── index.js     # 配置入口文件
-    ├──styles 
+    ├── styles 
     ├── favicon.ico       # 公共工具库类
-    ├──index.ejs          # 模板文件
-├─ .babelrc               [#babel配置文件](https://inv-veri.chinatax.gov.cn/)
-├─ package.json           # 包配置
+    ├── index.ejs          # 模板文件
+├── .babelrc               [#babel配置文件](https://inv-veri.chinatax.gov.cn/)
+├── package.json           # 包配置
 ├── README.md   
-├── server.js            # 服务文件配置
-├── webpack-dev-config.js [# 开发构建配置](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
-├── webpack-pro-config.js  # 正式环境配置
+├── server.js              # 服务文件配置
+├── webpack-dev-config.js  [# 开发构建配置](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
+├── webpack-pro-config.js   # 正式环境配置
 ├── webpack-public-path.js  # 开发地址配置
 ```
 > **注意**  当前目录结构适用于原生和微信小程序，请勿修改。
@@ -146,9 +146,11 @@ hashHistory.listen(location => {
   }
 });
 
-
 ```
-#### ```src/js/pages/routes.js``` 
+
+该框架下的配置文件，一般不用做修改，也可根据需要修改。项目动作配置入口，项目sagas配置入口，项目路由集合，创建集合应用中间键等都在此目录下完成。
+
+#### ```src/js/pages/routes.js```   在容器中创建路由
  
 ```js
 import React, {PropTypes} from 'react';
@@ -592,7 +594,7 @@ export default CouresesList
 
 ```
 
-####```src/js/utils/xFetch.js``` 
+####```src/js/utils/xFetch.js``` 在```utils```下创建一个公共方法
  
 ```js
 //ajax请求方法==xFetch
@@ -611,7 +613,7 @@ function xFetch(options) {
 ```
 作为一个公共方法，内部结构不同，但是必须要保证方法名称的一致，这样无论是在web端还是原生或者是微信小程序里，页面逻辑都可以复用，而且容易修改。（如下例所示）
 
-####```src/js/sagas/courses.js``` 
+####```src/js/sagas/courses.js```  使用utils下的方法，在```sagas``` 下创建一个页面
  
 ```js
 function* coursesQuery({
@@ -645,7 +647,7 @@ function* coursesQuery({
 * [wechat-react](https://github.com/flyjennyetn/wechat-react)
 
 ##贡献者
-[北京天融互联科技有限](http://www.e-tianrong.com/)
+[北京天融互联科技有限公司](http://www.e-tianrong.com/)
 [flyjennyetn](https://github.com/flyjennyetn)
 [荣倩倩](rongqianqian@-tianrong.com)
 
