@@ -12,21 +12,20 @@ let config = {
     responseType: 'json',
     withCredentials: true,
     transformRequest: [(data) => {
-        data = {
+
+        let datum = {
             ...data.info,
             head:{
-                "transId": "",
-                "appid": JYH171229.APPID,
+                "appid": JYT171215.APPID,
                 "transDate": moment().format('YYYYMMDD'),
                 "transTime": moment().format('HHmmss'),
-                "appkey": JYH171229.APPKEY,
+                "appkey": JYT171215.APPKEY,
+                "sign": "",
                 ...data.params
             }
         }
-
-        // delete data.params
-        console.log(JSON.stringify(data))
-        return JSON.stringify(data)
+        delete datum.head.requestUrl
+        return JSON.stringify(datum)
     }],
     transformResponse: [(json)=> {
         // 这里提前处理返回的数据
@@ -44,6 +43,5 @@ axios.interceptors.response.use(function (res) {
 });
 export function postApi(data) {
     let fullUrl = (data.params.requestUrl.indexOf('http') === -1) ? JYH171229.API_HOST + data.params.requestUrl : data.params.requestUrl;
-    delete data.params.requestUrl
     return axios.post(fullUrl,data, config)
 }
