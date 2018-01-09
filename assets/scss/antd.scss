@@ -1,0 +1,20 @@
+@import "./_color.scss";
+
+.am-notice-bar{
+  background-color:rgba(222,222,222,0.1)!important;
+  color: #fff!important;
+}
+
+.am-action-sheet-body .am-action-sheet-button-list .am-action-sheet-cancel-button{
+  color: #ffffff!important;
+  background: #c7161e!important;
+}
+
+.am-toast-mask{
+	top:-12%!important;
+}
+
+//轮播插件
+.slick-dots{
+  bottom:20px!important;
+}
