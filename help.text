@@ -1,0 +1,27 @@
+旧版react 需要做的事情
+1.覆盖你们的wabpack 文件
+2.覆盖 app/template.html
+3.覆盖 store 目录
+
+
+需要修改的配置
+1. 接口配置文件统一
+2. 行动名称  /new/set/list/data  第一个单词是模块名  后面是表述含义
+3. 后台请求格式 统一 
+const response = yield call(postApi,{
+    params: queryPolicy,  //配置文件服务层
+    info:{
+			参数层
+    }
+});
+
+4.sagas 只会返回业务层数据 不管错误或者失败
+
+
+复制粘贴不需要的引入全部删除
+5.点前提交svn  发各自的项目svn地址
+
+
+6. android 上传图片取消或者返回再无反映 请联系原生解决 WebView的问题
+
+7. js控制android原生返回按钮 请参考 https://github.com/iazrael/xback  本手脚newlist 页面有实例
