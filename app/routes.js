@@ -11,7 +11,6 @@ const App = asyncComponent(() => import('./pages/App'))
 const Login = asyncComponent(() => import('./pages/Login/'))
 const News = asyncComponent(() => import('./pages/news/routes'))
 
-
 export default class extends PureComponent {
     render() {
         const {store,history} = this.props
