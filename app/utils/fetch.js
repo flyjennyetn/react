@@ -39,11 +39,12 @@ export const callApi = (fullUrl, data = null) => {
                 return false;
             }
         }).catch((err)=>{
-            console.log(err)
+            Toast.info("网络请求异常，请检查网络")
+            return false;
         })
 }
 
 export function postApi(data) {
     let fullUrl = (data.params.requestUrl.indexOf('http') === -1) ? JYT171215.API_HOST + data.params.requestUrl : data.params.requestUrl;
-    callApi(fullUrl,data)
+    return callApi(fullUrl,data)
 }

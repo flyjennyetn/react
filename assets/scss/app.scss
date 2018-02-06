@@ -1,4 +1,4 @@
-@import "./_color.scss";
+@import "config.scss";
 
 // 全局盒子模型设置
 *, *:before, *:after {
@@ -19,12 +19,12 @@ html,body{
 body {
   background-color: #f2f2f2;
   font-family:Helvetica;
-  color:$color3;
+  color:$color0;
   margin: 0;
   padding: 0;
 }
 a{
-  color:$color6;
+  // color:$color6;
 }
 em{
   font-style: normal;
@@ -133,81 +133,7 @@ em{
 .flex-between{
   justify-content: space-between;
 }
-.color0 {
-  color: $color0!important;
-}
-.color1 {
-  color: $color1!important;
-}
-.color2 {
-  color: $color2!important;
-}
-.color3{
-  color:$color3!important;
-}
-.color4{
-  color:$color4!important;
-}
-.color5 {
-  color: $color5!important;
-}
-.color7{
-  color:$color7!important;
-}
-.color23{
-  color:$color23!important;
-}
-.color8{
-  color:$color8!important;
-}
-.color9{
-  color:$color9!important;
-}
-.color10{
-  color:$color10!important;
-}
-.color11{
-  color:$color11!important;
-}
-.color12{
-  color:$color12!important;
-}
-.color13{
-  color:$color13!important;
-}
-.color14{
-  color:$color14!important;
-}
-.color15{
-  color:$color15!important;
-}
-.color16{
-  color:$color16!important;
-}
-.color17{
-  color:$color17!important;
-}
-.color18{
-  color:$color18!important;
-}
-.color19{
-  color:$color19!important;
-}
-.color20{
-  color:$color20!important;
-}
-.color21{
-  color:$color21!important;
-}
-.color22{
-  color:$color22!important;
-}
-.color24{
-  color:$color24!important;
-}
-.color25{
-  color:$color25!important;
-}
+
 .bg-alpha{
   background-color: rgba(0,0,0,.7);
 }
@@ -229,12 +155,12 @@ em{
   background-repeat: no-repeat;
 }
 
-.bg-main{
-  background-color: $color0!important;
-}
-.bg-white{
-  background-color:$color10!important;
-}
+// .bg-main{
+//   background-color: $color0!important;
+// }
+// .bg-white{
+//   background-color:$color10!important;
+// }
 .bg-gray{
   background-color:#f5f5f5!important;
 }

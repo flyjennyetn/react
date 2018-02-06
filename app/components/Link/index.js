@@ -2,7 +2,7 @@
  * Created by flyjennyetn on 2017/12/25.
  */
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 export default ({href, className, onClick, style, activeClassName, onlyActiveOnIndex, children}) => {
   let extAttr = {}

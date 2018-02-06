@@ -18,6 +18,11 @@ export const queryPolicy = {
 }
 
 export const findMcomList = {
-	requestUrl:'/register/findMcomList',
-	transCode:'RS0005'
+    requestUrl:'/register/findMcomList',
+    transCode:'RS0005'
+}
+
+export const userComInfo = {
+	requestUrl:'/register/userComInfo',
+	transCode:'RS0006'
 }

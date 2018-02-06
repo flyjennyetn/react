@@ -92,13 +92,13 @@ export default class extends PureComponent {
     };
 
     next = () => {
-        this.props.router.push('/newsList')
+        this.props.history.push('/news/list')
     };
 
     render(){
         const {btnStyles,agentCode,smsCode,loading,mobile} = this.state;
         return (
-            <div className={styles.container}>
+            <div className={`${styles.container} bg-main`}>
                 <img className={`bg-cover ${styles.logo}`} src={p} style={{backgroundImage: `url(${logo})`}}/>
                 <div className={styles.box}>
                     <div className={styles.row}>

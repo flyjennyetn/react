@@ -12,7 +12,7 @@ import CompressionWebpackPlugin from 'compression-webpack-plugin'
 
 const svgDirs = [
     require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
-    path.resolve(__dirname, 'assets/fonts'),  // 2. 自己私人的 svg 存放目录
+    // path.resolve(__dirname, 'assets/fonts'),  // 2. 自己私人的 svg 存放目录
 ]
 var webpackConfig={
     entry: {
@@ -25,8 +25,7 @@ var webpackConfig={
     },
     output: {
         path: path.join(__dirname,'dist'),
-        // filename: 'bundle.min.js',
-        filename: '[name].[chunkhash].js',
+        filename: 'bundle.min.js',
         publicPath: '/',
     },
     externals: {
@@ -76,71 +75,11 @@ var webpackConfig={
     }
 }
 
-if(process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'dev'){
-
-    webpackConfig.devtool='cheap-module-eval-source-map'
-    webpackConfig.entry.bundle=[
-        'webpack-dev-server/client',
-        'webpack/hot/only-dev-server',
-        'react-hot-loader/patch'
-    ].concat(webpackConfig.entry.bundle)
-    webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
-    webpackConfig.module.rules=[
-        {
-            test:/\.js$/,
-            loader:'babel-loader',
-            exclude: /node_modules/
-        },{
-            test:/\.css$/,
-            use:['style-loader','css-loader','postcss-loader']
-        },{
-            test:/\.scss$/,
-            use:[
-                'style-loader',
-                'css-loader',
-                'postcss-loader'
-            ],
-            include: path.resolve(__dirname, 'assets/scss')
-        },{
-            test:/\.scss$/,
-            use:[
-                'style-loader',
-                {
-                    loader:'css-loader',
-                    options:{
-                        modules:true,
-                        sourceMap:true,
-                        importLoaders:1,
-                        localIdentName:'[name]__[local]___[hash:base64:5]'
-                    }
-                },
-                'postcss-loader'
-            ],
-            include:path.resolve(__dirname, 'app')
-        },{
-            test:/\.(eot|svg|ttf|woff|pdf).*$/,
-            loader:'url-loader',
-            exclude:svgDirs,
-            options:{
-                limit:10000
-            }
-        },{
-            test:/\.(gif|jpe?g|png|ico).*$/,
-            loader:'url-loader',
-            options:{
-                limit:10000
-            }
-        },{
-            test:/\.(svg)$/i,
-            loader: 'svg-sprite-loader',
-            include: svgDirs
-        }
-    ]
-}else{
+if(process.env.NODE_ENV){
     webpackConfig.externals=Object.assign({},webpackConfig.externals,{
         'react':'React',
         'react-dom':'ReactDOM',
-        'react-router':'ReactRouter',
+        'react-router-dom':'reactRouterDom',
         'redux':'Redux',
         'react-redux':'ReactRedux',
         'react-router-redux':'ReactRouterRedux',
@@ -149,8 +88,7 @@ if(process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'dev'){
     webpackConfig.output.chunkFilename='[id].[chunkhash:5].min.js'
 
     //指定发布地址路径
-    // webpackConfig.output.publicPath='/jyhNew/'+packageInfo.version+'/'
-    webpackConfig.output.publicPath='/androidReturn/'
+    webpackConfig.output.publicPath=packageInfo.publicPath[process.env.NODE_ENV]
 
     webpackConfig.plugins.push(new webpack.HashedModuleIdsPlugin()) //缓存问题
     webpackConfig.plugins.push(new ImageminPlugin({
@@ -253,5 +191,60 @@ if(process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'dev'){
             include: svgDirs
         }
     ]
+}else{
+    webpackConfig.devtool='cheap-module-eval-source-map'
+    webpackConfig.entry.bundle=[
+        'webpack-dev-server/client',
+        'webpack/hot/only-dev-server',
+        'react-hot-loader/patch'
+    ].concat(webpackConfig.entry.bundle)
+    webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
+    webpackConfig.module.rules=[
+        {
+            test:/\.js$/,
+            loader:'babel-loader',
+            exclude: /node_modules/
+        },{
+            test:/\.css$/,
+            use:['style-loader','css-loader','postcss-loader']
+        },{
+            test:/\.scss$/,
+            use:['style-loader','css-loader','postcss-loader'],
+            include: path.resolve(__dirname, 'assets/scss')
+        },{
+            test:/\.scss$/,
+            use:[
+                'style-loader',
+                {
+                    loader:'css-loader',
+                    options:{
+                        modules:true,
+                        sourceMap:true,
+                        importLoaders:1,
+                        localIdentName:'[name]__[local]___[hash:base64:5]'
+                    }
+                },
+                'postcss-loader'
+            ],
+            include:path.resolve(__dirname, 'app')
+        },{
+            test:/\.(eot|svg|ttf|woff|pdf).*$/,
+            loader:'url-loader',
+            exclude:svgDirs,
+            options:{
+                limit:10000
+            }
+        },{
+            test:/\.(gif|jpe?g|png|ico).*$/,
+            loader:'url-loader',
+            options:{
+                limit:10000
+            }
+        },{
+            test:/\.(svg)$/i,
+            loader: 'svg-sprite-loader',
+            include: svgDirs
+        }
+    ]    
 }
 export default webpackConfig

@@ -27,4 +27,10 @@ export function postApi(data) {
     let fullUrl = (data.params.requestUrl.indexOf('http') === -1) ? REQUESTIMG.API_HOST + data.params.requestUrl : data.params.requestUrl;
     delete data.params.requestUrl
     return axios.post(fullUrl,data, config)
+    .then(function(res){
+        return res;
+    }).catch(function(err){
+        Toast.info("网络请求异常，请检查网络")
+        return false;
+    })
 }

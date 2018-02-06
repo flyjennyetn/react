@@ -2,32 +2,32 @@
  * Created by flyjennyetn on 2016-10-26.
  */
 import React, {PureComponent} from "react";
-import {Router,Route,IndexRoute} from 'react-router';
+import {BrowserRouter,Switch,Router,Redirect,Route} from 'react-router-dom'
+import {ConnectedRouter} from "react-router-redux";
 import {Provider} from "react-redux";
 
-//所有页面引入
-import App from './pages/App';
-import Login from './pages/Login'
-import NewsList from './pages/NewsList'
-import NewsDetails from './pages/NewsList/NewsDetails'
-// import NotFound from './pages/NotFound'
+import asyncComponent from './pages/async-component'
+const App = asyncComponent(() => import('./pages/App'))
+const Login = asyncComponent(() => import('./pages/Login/'))
+const News = asyncComponent(() => import('./pages/news/routes'))
 
 
 export default class extends PureComponent {
     render() {
         const {store,history} = this.props
         return (
-            <Provider store={store}>
-                <Router history={history}>
-                    <Route path="/" component={App}>
-                        <IndexRoute component={Login}/>
-                        <Route path="newsList" component={NewsList} />
-                        <Route path="newsList/newsDetails/:id" component={NewsDetails} />
-                        <Route path="*" component={Login} />
-                    </Route>
-                </Router>
-            </Provider>
+	        <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <Switch>
+                        <App>
+                            <Route exact path='/' component={Login} />
+                            <News />
+                        </App>
+                    </Switch>
+                </ConnectedRouter>
+	        </Provider>
         )
     }
 }
 
+ 

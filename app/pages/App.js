@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import Loading from 'components/Loading';
 import * as cache from 'utils/cache/';
 
-// import "assets/scss/fonts.scss"; 公司内部设计都是到处找的icon 所以前端自己定义icon没有意义
+import "assets/scss/fonts.scss"; //公司内部设计都是到处找的icon 所以前端自己定义icon没有意义
 import "assets/scss/antd.scss";
 import "assets/scss/app.scss";
 

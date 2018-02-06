@@ -3,7 +3,7 @@
  */
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import xback from 'assets/js/xback';
+import XBack from 'assets/js/xback';
 import Link from 'components/Link';
 import * as cache from 'utils/cache/';
 
@@ -14,12 +14,9 @@ import styles from './style.scss';
 // import personalCenter from 'assets/images/personalCenter1.png';
 
 
-@connect(({global,news})=> {
-    return {global,news}
+@connect(({gstates,news})=> {
+    return {gstates,news}
 })
-
-
-
 
 
 export default class extends PureComponent {
@@ -31,12 +28,10 @@ export default class extends PureComponent {
     };
 
     componentWillMount(){
-
-        XBack.listen(()=>{
-            alert('android 返回了');
-            this.props.router.push('/newsList/newsDetails/1')
-            return false;
-        });
+        // window.XBack.listen(()=>{
+        //     this.props.history.push('/news/details/1')
+        //     return false;
+        // });
 
 
         // const info = {
@@ -44,9 +39,9 @@ export default class extends PureComponent {
         //     "lens":"2690"
         // }
 
-        // this.props.dispatch({
-        //     type:'news/premQuery'
-        // })        
+        this.props.dispatch({
+            type:'news/premQuery'
+        })        
 
         // this.props.dispatch({
         //     type:'register/findMcomList'
@@ -55,6 +50,10 @@ export default class extends PureComponent {
         // this.props.dispatch({
         //     type:'interface/uploadPic',
         //     ...info
+        // })        
+
+        // this.props.dispatch({
+        //     type:'register/userComInfo'
         // })
     }
 
@@ -62,7 +61,7 @@ export default class extends PureComponent {
         const {pageStatus} = this.state
         return (
             <div className={styles.container}>
-                <Link href='/newsList/newsDetails/1'>新闻列表 </Link>
+                <Link href='/news/details/1'>新闻列表 </Link>
             </div>
         )
     }
