@@ -79,7 +79,7 @@ if(process.env.NODE_ENV){
     webpackConfig.externals=Object.assign({},webpackConfig.externals,{
         'react':'React',
         'react-dom':'ReactDOM',
-        'react-router-dom':'ReactRouterDom',
+        // 'react-router-dom':'ReactRouterDom',
         'redux':'Redux',
         'react-redux':'ReactRedux',
         'react-router-redux':'ReactRouterRedux',
