@@ -104,7 +104,7 @@ export default class extends PureComponent {
                     <div className={styles.row}>
                         <InputTxt 
                             leftIcon={login_sjh}
-                            placeholder="请输入手机号"
+                            placeholder="请输入手机号1111"
                             handle={this.handleMobile}
                             value={'123'}
                         />
