@@ -3,7 +3,7 @@
  */
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import XBack from 'assets/js/xback';
+//import xback from 'assets/js/xback';
 import Link from 'components/Link';
 import * as cache from 'utils/cache/';
 
@@ -14,9 +14,12 @@ import styles from './style.scss';
 // import personalCenter from 'assets/images/personalCenter1.png';
 
 
-@connect(({gstates,news})=> {
-    return {gstates,news}
+@connect(({global,news})=> {
+    return {global,news}
 })
+
+
+
 
 
 export default class extends PureComponent {
@@ -28,10 +31,12 @@ export default class extends PureComponent {
     };
 
     componentWillMount(){
-        // window.XBack.listen(()=>{
-        //     this.props.history.push('/news/details/1')
-        //     return false;
-        // });
+
+        //XBack.listen(()=>{
+        //    alert('android 返回了');
+        //    this.props.router.push('/news/details/1')
+        //    return false;
+        //});
 
 
         // const info = {
@@ -39,9 +44,9 @@ export default class extends PureComponent {
         //     "lens":"2690"
         // }
 
-        this.props.dispatch({
-            type:'news/premQuery'
-        })        
+        //this.props.dispatch({
+        //    type:'news/premQuery'
+        //})
 
         // this.props.dispatch({
         //     type:'register/findMcomList'

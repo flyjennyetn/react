@@ -3,7 +3,7 @@
  */
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import createSagaMiddleware from 'redux-saga'
-import {routerReducer} from "react-router-redux";
+import {routerReducer as routing} from "react-router-redux";
 import * as rootReducer from "../reducers";
 
 export default (initialState) => {
@@ -11,7 +11,7 @@ export default (initialState) => {
     const store = createStore(
 	    combineReducers({
 	      ...rootReducer.default,
-	      routerReducer
+	      routing
 	    }),
 	    initialState,
 	    applyMiddleware(sagaMiddleware)

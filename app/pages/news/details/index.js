@@ -7,8 +7,13 @@ import * as cache from 'utils/cache/';
 
 import styles from './style.scss';
 
-@connect(({gstates})=> {
-    return {gstates}
+
+// import p from 'assets/images/s.gif';
+// import personalCenter from 'assets/images/personalCenter1.png';
+
+
+@connect(({global})=> {
+    return {global}
 })
 export default class extends PureComponent {
 
@@ -19,7 +24,6 @@ export default class extends PureComponent {
   
 
     render(){
-
         const {pageStatus} = this.state
         return (
             <div className={styles.container}>

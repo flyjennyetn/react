@@ -43,7 +43,8 @@ export default class extends PureComponent {
 
 
     render() {
-        const {gstates, children, location} = this.props;
+        console.log(this)
+        const {gstates, children} = this.props;
         return(
             <div className={'fullHeight'}>
                 {gstates.isLoading &&

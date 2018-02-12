@@ -79,7 +79,7 @@ if(process.env.NODE_ENV){
     webpackConfig.externals=Object.assign({},webpackConfig.externals,{
         'react':'React',
         'react-dom':'ReactDOM',
-        // 'react-router-dom':'ReactRouterDom',
+        'react-router':'ReactRouter',
         'redux':'Redux',
         'react-redux':'ReactRedux',
         'react-router-redux':'ReactRouterRedux',
@@ -191,7 +191,9 @@ if(process.env.NODE_ENV){
             include: svgDirs
         }
     ]
+   
 }else{
+
     webpackConfig.devtool='cheap-module-eval-source-map'
     webpackConfig.entry.bundle=[
         'webpack-dev-server/client',
@@ -209,7 +211,11 @@ if(process.env.NODE_ENV){
             use:['style-loader','css-loader','postcss-loader']
         },{
             test:/\.scss$/,
-            use:['style-loader','css-loader','postcss-loader'],
+            use:[
+                'style-loader',
+                'css-loader',
+                'postcss-loader'
+            ],
             include: path.resolve(__dirname, 'assets/scss')
         },{
             test:/\.scss$/,
