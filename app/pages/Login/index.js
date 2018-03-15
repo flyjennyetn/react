@@ -96,7 +96,6 @@ export default class extends PureComponent {
     };
 
     render(){
-        console.log(this)
         const {btnStyles,agentCode,smsCode,loading,mobile} = this.state;
         return (
             <div className={`${styles.container} bg-main`}>

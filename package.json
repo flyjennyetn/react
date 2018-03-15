@@ -10,7 +10,7 @@
     "build": "npm run clean && cross-env NODE_ENV=production webpack --hide-modules --progress --profile --colors --config webpack.build.js"
   },
   "publicPath":{
-    "dev":"/ceshi/",
+    "dev":"/scaffold/dist/",
     "uat":"/scaffold/dist/",
     "build":"/react/dist/"
   },
