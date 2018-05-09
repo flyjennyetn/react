@@ -9,10 +9,10 @@
     "uat": "npm run clean && cross-env NODE_ENV=dev webpack --hide-modules --progress --profile --colors --config webpack.build.js",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --hide-modules --progress --profile --colors --config webpack.build.js"
   },
-  "publicPath":{
-    "dev":"/scaffold/dist/",
-    "uat":"/scaffold/dist/",
-    "build":"/react/dist/"
+  "publicPath": {
+    "dev": "/scaffold/dist/",
+    "uat": "/scaffold/dist/",
+    "build": "/react/dist/"
   },
   "author": "flyjennyetn",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "url": "git@github.com:flyjennyetn/react.git"
   },
   "dependencies": {
-    "antd-mobile": "^2.1.5",
+    "antd-mobile": "^1.7.2",
     "axios": "^0.17.1",
     "crypto-js": "^3.1.9-1",
     "express": "^4.15.3",

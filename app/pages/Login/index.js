@@ -69,9 +69,8 @@ export default class extends PureComponent {
 
     vCodeTime = () => {
         const {mobile,smsCode} = this.state;
-
         if(mobile == ''|| mobile ==null){
-            showToast('手机号不能为空', 1)
+            utils.showToast('手机号不能为空', 1)
             return false
         }
 
@@ -114,7 +113,7 @@ export default class extends PureComponent {
                             leftIcon={login_yzm}
                             placeholder="短信验证码"
                         >
-                            <Button text="获取验证码" style={styles.code} onPress={()=>this.vCodeTime} />
+                            <Button text="获取验证码" style={styles.code} onPress={()=>this.vCodeTime()} />
                         </InputTxt>    
                     </div>
 

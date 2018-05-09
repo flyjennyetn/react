@@ -6,7 +6,7 @@ import * as cache from 'utils/cache/';
 export const getUserData = ()=>{
     //Y001  营业部经理
     //Y002    客户经理
-    if(process.env.NODE_ENV == 'production' || process.env.NODE_ENV == 'dev'){
+    if(process.env.NODE_ENV){
         if(!cache.get('userInfo')){
             let userInfo = native.getUserData();
             //alert(userInfo)
@@ -19,7 +19,7 @@ export const getUserData = ()=>{
 }
 
 export const JSLoginOut = ()=>{
-    if(process.env.NODE_ENV == 'production' || process.env.NODE_ENV == 'dev'){
+    if(process.env.NODE_ENV){
         cache.set('userInfo',false);
         native.JSLoginOut();
     }
