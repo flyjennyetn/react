@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "手脚架",
   "scripts": {
-    "start": "cross-env NODE_ENV=development && node client/index.js  --progress --colors --profile",
+    "start": "node client/index.js  --progress --colors --profile",
     "clean": "rimraf dist/*",
     "dev": "npm run clean && cross-env NODE_ENV=dev webpack --hide-modules --progress --profile --colors --config webpack.build.js",
-    "uat": "npm run clean && cross-env NODE_ENV=dev webpack --hide-modules --progress --profile --colors --config webpack.build.js",
+    "uat": "npm run clean && cross-env NODE_ENV=uat webpack --hide-modules --progress --profile --colors --config webpack.build.js",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --hide-modules --progress --profile --colors --config webpack.build.js"
   },
   "publicPath": {
