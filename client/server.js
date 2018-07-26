@@ -24,9 +24,9 @@ new WebpackDevServer(webpack(config), {
         chunks: false,
         chunkModules: false
     }
-}).listen(3333, 'localhost', function (err) {
+}).listen(3000, 'localhost', function (err) {
     if (err) {
         console.log(err);
     }
-    console.log('Listening at http://localhost:3333');
+    console.log('Listening at http://localhost:3000');
 });

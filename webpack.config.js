@@ -206,7 +206,13 @@ if(process.env.NODE_ENV){
             test:/\.js$/,
             loader:'babel-loader',
             exclude: /node_modules/
-        },{
+        },
+        // {
+        //     test: /\.js$/,
+        //     exclude: /node_modules/,
+        //     loaders: ['babel-loader', 'eslint-loader']
+        // },
+        {
             test:/\.css$/,
             use:['style-loader','css-loader','postcss-loader']
         },{
