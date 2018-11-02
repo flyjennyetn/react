@@ -101,7 +101,7 @@ if (process.env.NODE_ENV) {
     webpackConfig.plugins.push(new webpack.optimize.DedupePlugin())
 
     // 是为组件和模块分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID，通过分析ID，可以建议降低总文件的大小。
-    webpackConfig.plugins.push(new webpack.optimize.OccurenceOrderPlugin())
+    webpackConfig.plugins.push(new webpack.optimize.OccurrenceOrderPlugin())
 
     webpackConfig.plugins.push(new ExtractTextPlugin({
         filename: 'bundle.min.css',
