@@ -11,28 +11,28 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import CompressionWebpackPlugin from 'compression-webpack-plugin'
 
 const svgDirs = [
-    require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
+    require.resolve('antd-mobile').replace(/warn\.js$/, ''), // 1. 属于 antd-mobile 内置 svg 文件
     // path.resolve(__dirname, 'assets/fonts'),  // 2. 自己私人的 svg 存放目录
 ]
-var webpackConfig={
+var webpackConfig = {
     entry: {
-        vendor:[
-            'babel-polyfill','react-fastclick'
+        vendor: [
+            'babel-polyfill', 'react-fastclick'
         ],
-        bundle:[
+        bundle: [
             path.join(__dirname, 'client/entry.js')
         ],
     },
     output: {
-        path: path.join(__dirname,'dist'),
+        path: path.join(__dirname, 'dist'),
         filename: 'bundle.min.js',
         publicPath: '/',
     },
     externals: {
         'wx': 'wx',
         'axios': 'axios',
-        'moment':'moment',
-        'lodash':'lodash',
+        'moment': 'moment',
+        'lodash': 'lodash',
     },
     resolve: {
         modules: ['node_modules'],
@@ -46,17 +46,17 @@ var webpackConfig={
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            filename:'vendor.min.js',
-            minChunks:Infinity,
+            filename: 'vendor.min.js',
+            minChunks: Infinity,
         }),
         new HtmlWebpackPlugin({
-            title:packageInfo.description,
-            template: path.resolve(__dirname,'app/template.html'),
-            filename:'index.html',
+            title: packageInfo.description,
+            template: path.resolve(__dirname, 'app/template.html'),
+            filename: 'index.html',
             inject: 'body',
             hash: true,
-            cache:true,
-            minify:{
+            cache: true,
+            minify: {
                 removeComments: true,
                 collapseWhitespace: true,
                 removeRedundantAttributes: true,
@@ -71,34 +71,40 @@ var webpackConfig={
         })
     ],
     module: {
-        rules:[]
+        rules: []
     }
 }
 
-if(process.env.NODE_ENV){
-    webpackConfig.externals=Object.assign({},webpackConfig.externals,{
-        'react':'React',
-        'react-dom':'ReactDOM',
-        'react-router':'ReactRouter',
-        'redux':'Redux',
-        'react-redux':'ReactRedux',
-        'react-router-redux':'ReactRouterRedux',
-        'redux-saga':'ReduxSaga'
+if (process.env.NODE_ENV) {
+    webpackConfig.externals = Object.assign({}, webpackConfig.externals, {
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'react-router': 'ReactRouter',
+        'redux': 'Redux',
+        'react-redux': 'ReactRedux',
+        'react-router-redux': 'ReactRouterRedux',
+        'redux-saga': 'ReduxSaga'
     })
-    webpackConfig.output.chunkFilename='[id].[chunkhash:5].min.js'
+    webpackConfig.output.chunkFilename = '[id].[chunkhash:5].min.js'
 
     //指定发布地址路径
-    webpackConfig.output.publicPath=packageInfo.publicPath[process.env.NODE_ENV]
+    webpackConfig.output.publicPath = packageInfo.publicPath[process.env.NODE_ENV]
 
     webpackConfig.plugins.push(new webpack.HashedModuleIdsPlugin()) //缓存问题
     webpackConfig.plugins.push(new ImageminPlugin({
-      pngquant: {
-        quality: '95-100'
-      }
+        pngquant: {
+            quality: '95-100'
+        }
     }))
 
+    // 是查找相等或近似的模块，避免在最终生成的文件中出现重复的模块，比如可以用它去除依赖中重复的插件；
+    webpackConfig.plugins.push(new webpack.optimize.DedupePlugin())
+
+    // 是为组件和模块分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID，通过分析ID，可以建议降低总文件的大小。
+    webpackConfig.plugins.push(new webpack.optimize.OccurenceOrderPlugin())
+
     webpackConfig.plugins.push(new ExtractTextPlugin({
-        filename:'bundle.min.css',
+        filename: 'bundle.min.css',
         disable: false,
         allChunks: true
     }))
@@ -114,97 +120,91 @@ if(process.env.NODE_ENV){
         asset: '[path].gz[query]',
         algorithm: 'gzip',
         test: new RegExp(
-            '\\.(js|css|ttf|svg|eot|woff)$'    //压缩 js 与 css
+            '\\.(js|css|ttf|svg|eot|woff)$' //压缩 js 与 css
         ),
         threshold: 10240,
         minRatio: 0.8
     }))
-    webpackConfig.module.rules=[
-        {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/
-        },{
-            test: /\.css$/,
-            use:ExtractTextPlugin.extract({
-                fallback:'style-loader',
-                use: [
-                    {
-                        loader:'css-loader',
-                        options:{
-                            minimize:true
-                        }
-                    },
-                    'postcss-loader'
-                ]
-            })
-        },{
-            test: /\.scss$/,
-            use:ExtractTextPlugin.extract({
-                fallback:'style-loader',
-                use: [
-                    {
-                        loader:'css-loader',
-                        options:{
-                            minimize:true
-                        }
-                    },
-                    'postcss-loader'
-                ]
-            }),
-            include: path.resolve(__dirname,'assets/scss')
-        },{
-            test: /\.scss$/,
-            use:ExtractTextPlugin.extract({
-                fallback:'style-loader',
-                use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            sourceMap: true,
-                            importLoaders: 1,
-                            localIdentName: '[name]_[local]_[hash:base64:3]',
-                            minimize:true
-                        }
-                    },
-                    'postcss-loader'
-                ]
-            }),
-            include: path.resolve(__dirname,'app')
-        },{
-            test:/\.(eot|svg|ttf|woff).*$/,
-            loader:'url-loader',
-            exclude:svgDirs,
-            options:{
-                limit:10000
-            }
-        },{
-            test:/\.(gif|jpe?g|png|ico).*$/,
-            loader:'url-loader',
-            options:{
-                limit:10000
-            }
-        },{
-            test:/\.(svg)$/i,
-            loader: 'svg-sprite-loader',
-            include: svgDirs
+    webpackConfig.module.rules = [{
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+    }, {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [{
+                    loader: 'css-loader',
+                    options: {
+                        minimize: true
+                    }
+                },
+                'postcss-loader'
+            ]
+        })
+    }, {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [{
+                    loader: 'css-loader',
+                    options: {
+                        minimize: true
+                    }
+                },
+                'postcss-loader'
+            ]
+        }),
+        include: path.resolve(__dirname, 'assets/scss')
+    }, {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [{
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        sourceMap: true,
+                        importLoaders: 1,
+                        localIdentName: '[name]_[local]_[hash:base64:3]',
+                        minimize: true
+                    }
+                },
+                'postcss-loader'
+            ]
+        }),
+        include: path.resolve(__dirname, 'app')
+    }, {
+        test: /\.(eot|svg|ttf|woff).*$/,
+        loader: 'url-loader',
+        exclude: svgDirs,
+        options: {
+            limit: 10000
         }
-    ]
-   
-}else{
+    }, {
+        test: /\.(gif|jpe?g|png|ico).*$/,
+        loader: 'url-loader',
+        options: {
+            limit: 10000
+        }
+    }, {
+        test: /\.(svg)$/i,
+        loader: 'svg-sprite-loader',
+        include: svgDirs
+    }]
 
-    webpackConfig.devtool='cheap-module-eval-source-map'
-    webpackConfig.entry.bundle=[
+} else {
+
+    webpackConfig.devtool = 'cheap-module-eval-source-map'
+    webpackConfig.entry.bundle = [
         'webpack-dev-server/client',
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch'
     ].concat(webpackConfig.entry.bundle)
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
-    webpackConfig.module.rules=[
-        {
-            test:/\.js$/,
-            loader:'babel-loader',
+    webpackConfig.module.rules = [{
+            test: /\.js$/,
+            loader: 'babel-loader',
             exclude: /node_modules/
         },
         // {
@@ -213,50 +213,49 @@ if(process.env.NODE_ENV){
         //     loaders: ['babel-loader', 'eslint-loader']
         // },
         {
-            test:/\.css$/,
-            use:['style-loader','css-loader','postcss-loader']
-        },{
-            test:/\.scss$/,
-            use:[
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader', 'postcss-loader']
+        }, {
+            test: /\.scss$/,
+            use: [
                 'style-loader',
                 'css-loader',
                 'postcss-loader'
             ],
             include: path.resolve(__dirname, 'assets/scss')
-        },{
-            test:/\.scss$/,
-            use:[
-                'style-loader',
-                {
-                    loader:'css-loader',
-                    options:{
-                        modules:true,
-                        sourceMap:true,
-                        importLoaders:1,
-                        localIdentName:'[name]__[local]___[hash:base64:5]'
+        }, {
+            test: /\.scss$/,
+            use: [
+                'style-loader', {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        sourceMap: true,
+                        importLoaders: 1,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
                     }
                 },
                 'postcss-loader'
             ],
-            include:path.resolve(__dirname, 'app')
-        },{
-            test:/\.(eot|svg|ttf|woff|pdf).*$/,
-            loader:'url-loader',
-            exclude:svgDirs,
-            options:{
-                limit:10000
+            include: path.resolve(__dirname, 'app')
+        }, {
+            test: /\.(eot|svg|ttf|woff|pdf).*$/,
+            loader: 'url-loader',
+            exclude: svgDirs,
+            options: {
+                limit: 10000
             }
-        },{
-            test:/\.(gif|jpe?g|png|ico).*$/,
-            loader:'url-loader',
-            options:{
-                limit:10000
+        }, {
+            test: /\.(gif|jpe?g|png|ico).*$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000
             }
-        },{
-            test:/\.(svg)$/i,
+        }, {
+            test: /\.(svg)$/i,
             loader: 'svg-sprite-loader',
             include: svgDirs
         }
-    ]    
+    ]
 }
 export default webpackConfig
