@@ -1,0 +1,162 @@
+.neujahrMatch{
+	margin: 0px;
+	background: #999;
+	.icon2{
+		position: fixed;
+		z-index: 999;
+		top: 280px;
+		right: 0px;
+		width: 95px;
+		height: 195px;
+		background: url("./images/icon2.png") center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.bj1{
+		margin-top: -1px;
+		width: 100%;
+		height: 1198px;
+		background: url("./images/bj1.png") center center no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+		.icon1{
+			position: absolute;
+			z-index: 99;
+			top: 70px;
+			right: 0px;
+			background: url('./images/icon1.png') center center no-repeat;
+			background-size: 100% 100%;
+			width: 128px;
+			height: 49px;
+		}
+		.titleIcon{
+          position: absolute;
+          bottom:377px;
+          left: 157px;
+          z-index: 99;
+          background: url('./images/icon3.png') center center no-repeat;
+          background-size: 100% 100%;
+          width: 434px;
+          height: 111px;
+        }
+		.box{
+			position: absolute;
+			bottom:27px;
+			left: 45px;
+			width: 632px;
+			height: 356px;
+	        .preview{
+	          position: absolute;
+	          top: 0px;
+	          z-index: 9;
+	          // background: url('./images/video.png') center center no-repeat;
+	          background-size: 100% 100%;
+	          width: 660px;
+	          height: 387px;
+	        }
+
+		}
+	}
+	.bj2{
+	 	// margin-top: -1px;
+	 	width: 100%;
+	 	height: 622px;
+	 	background: url("./images/bj2.png") center center no-repeat;
+	 	background-size: 100% 100%;
+	 	position: relative;
+	 	.box{
+	 		position: absolute;
+	 		width: 750px;
+	 	}
+	}
+	.bj3{
+	 	// margin-top: -1px;
+	 	width: 100%;
+	 	height: 724px;
+	 	background: url("./images/bj3.png") center center no-repeat;
+	 	background-size: 100% 100%;
+	 	position: relative;
+	 	.box{
+	 		position: absolute;
+	 		width: 610px;
+	 		left: 70px
+	 	}
+	}
+	.bj4{
+		// margin-top: -1px;
+		width: 100%;
+		height: 1192px;
+		background: url("./images/bj4.png")  center  top no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+		a{
+			position: absolute;
+			display: block;
+			left: 0px;
+			top: 0px;
+			width: 76px;
+			height: 76px;
+		}
+	    .box{
+	      position: absolute;
+	      font-size: 0px;
+	      top:440px;
+	      width: 684px;
+	      a{
+	        display: inline-block;
+	        width: 550px;
+	        height: 210px;
+	      }
+	      .join{
+	          margin-left: 100px;
+	      }
+	    }
+	}
+}
+.rulesBox {
+	position: relative;
+	height: 880px;
+	.closeBtn {
+		position: absolute;
+		left: 50%;
+		margin-left: -36px;
+		bottom: 0;
+		width: 72px;
+		height: 72px;
+		background: url("./images/sales-close-btn.png") center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.rulesBg {
+		// width: 100%;
+		height: 780px;
+		border-radius: 10px;
+		background: #333;
+		padding: 25px;
+		h3 {
+			color: #fff;
+			font-size: 50px;
+			font-weight: bolder;
+			text-align: center;
+			line-height: 1;
+			margin-bottom: 35px;
+		}
+		p {
+			text-align: left;
+			color: #fff;
+			font-size: 26px;
+			line-height: 1.8;
+			margin-bottom: 20px;
+		}
+	}
+	@media only screen  and (min-device-width : 768px)  and (max-device-width : 1024px)  and (orientation : landscape){  
+  		height: 450px;
+  		.rulesBg {
+  			height: 350px;
+  			h3 {
+  				font-size: 25px;
+  			}
+  			p {
+				font-size: 16px;
+			}
+  		}
+	}
+}

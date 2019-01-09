@@ -1,0 +1,64 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// base scss
+// 原子样式
+//-----------------------------------------------------
+
+// Typography
+// ----------------------------------------------------
+.fs-sm { font-size: $font-size-sm!important; }
+.fs-md { font-size: $font-size-md!important; }
+.fs-lg { font-size: $font-size-lg!important; }
+.fs-xl { font-size: $font-size-xl!important; }
+
+// Margin && Padding
+// ----------------------------------------------------
+.mt-xs { margin-top: $gap-xs!important; }
+.mt-sm { margin-top: $gap-sm!important; }
+.mt-md { margin-top: $gap-md!important; }
+.mt-lg { margin-top: $gap-lg!important; }
+.mt-xl { margin-top: $gap-xl!important; }
+
+.mr-xs { margin-right: $gap-xs!important; }
+.mr-sm { margin-right: $gap-sm!important; }
+.mr-md { margin-right: $gap-md!important; }
+.mr-lg { margin-right: $gap-lg!important; }
+.mr-xl { margin-right: $gap-xl!important; }
+
+.mb-xs { margin-bottom: $gap-xs!important; }
+.mb-sm { margin-bottom: $gap-sm!important; }
+.mb-md { margin-bottom: $gap-md!important; }
+.mb-lg { margin-bottom: $gap-lg!important; }
+.mb-xl { margin-bottom: $gap-xl!important; }
+
+.ml-xs { margin-left: $gap-xs!important; }
+.ml-sm { margin-left: $gap-sm!important; }
+.ml-md { margin-left: $gap-md!important; }
+.ml-lg { margin-left: $gap-lg!important; }
+.ml-xl { margin-left: $gap-xl!important; }
+
+.pt-xs { padding-top: $gap-xs!important; }
+.pt-sm { padding-top: $gap-sm!important; }
+.pt-md { padding-top: $gap-md!important; }
+.pt-lg { padding-top: $gap-lg!important; }
+.pt-xl { padding-top: $gap-xl!important; }
+
+.pr-xs { padding-right: $gap-xs!important; }
+.pr-sm { padding-right: $gap-sm!important; }
+.pr-md { padding-right: $gap-md!important; }
+.pr-lg { padding-right: $gap-lg!important; }
+.pr-xl { padding-right: $gap-xl!important; }
+
+.pb-xs { padding-bottom: $gap-xs!important; }
+.pb-sm { padding-bottom: $gap-sm!important; }
+.pb-md { padding-bottom: $gap-md!important; }
+.pb-lg { padding-bottom: $gap-lg!important; }
+.pb-xl { padding-bottom: $gap-xl!important; }
+
+.pl-xs { padding-left: $gap-xs!important; }
+.pl-sm { padding-left: $gap-sm!important; }
+.pl-md { padding-left: $gap-md!important; }
+.pl-lg { padding-left: $gap-lg!important; }
+.pl-xl { padding-left: $gap-xl!important; }
+
+.dn { display: none!important; }

@@ -1,0 +1,35 @@
+.title {
+    position: relative;
+    background-color: #242424;
+    height: 1.2rem;
+    line-height: 1.2rem;
+}
+.goBack{
+    background: url(assets/images/backto-icon.png) center center no-repeat;
+    background-size: .266667rem .426667rem;
+    display: block;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.textCon {
+    width: 100%;
+    color: #fff;
+    font-size: .373333rem;
+    line-height: 1.2rem;
+    text-align: center;
+    margin: 0px;
+}
+
+.Link{
+      position: absolute;
+    top: 0;
+    z-index: 1;
+  right: .333333rem;
+    height: 100%;
+    color: #ccc;
+    font-size: .4rem;
+}

@@ -1,19 +1,30 @@
-
-.am-notice-bar{
-  background-color:rgba(222,222,222,0.1)!important;
-  color: #fff!important;
+.neujahrMatch_amModalTransparent{
+	width: 100%!important;
+	.am-modal-content{
+		background:none;
+		.am-modal-body{
+			padding-left:1.2rem!important;
+			padding-right:1.2rem!important;
+		}
+	}
 }
-
-.am-action-sheet-body .am-action-sheet-button-list .am-action-sheet-cancel-button{
-  color: #ffffff!important;
-  background: #c7161e!important;
+.golfActJan_amModalTransparent{
+	width: 100% !important;
+	.am-modal-content{
+		background:none;
+		.am-modal-body{
+			padding-left:1.2rem !important;
+			padding-right:1.2rem !important;
+		}
+	}
 }
-
-.am-toast-mask{
-	top:-12%!important;
-}
-
-//轮播插件
-.slick-dots{
-  bottom:20px!important;
+.ausOpenActJan_amModalTransparent{
+	width: 100%!important;
+	.am-modal-content{
+		background:none;
+		.am-modal-body{
+			padding-left:1.2rem!important;
+			padding-right:1.2rem!important;
+		}
+	}
 }

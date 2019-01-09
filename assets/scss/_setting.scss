@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+$lte7:                  false !default;
+$filter:                false !default;
+
+
+$baseFontSize:          12px !default;
+$baseLineHeight:        1.5 !default;
+$baseFontFamily:        'Microsoft Yahei', Arial, Tahoma, Arial, Helvetica, sans-serif !default;
+$fontCn:                "STHeiTi" !default;
+$fontYaHei:             "Microsoft Yahei" !default;
+
+$font-size-sm:			12px !default;
+$font-size-md:			14px !default;
+$font-size-lg:			16px !default;
+$font-size-xl:			18px !default;
+
+
+$baseGap:               20px !default;
+
+$gap-xs:				5px !default;
+$gap-sm:				10px !default;
+$gap-md:				15px !default;
+$gap-lg:				20px !default;
+$gap-xl:				30px !default;
+
+
+$baseWrapWidth:			1200px !default;
+
+
+$black:                 #000 !default;
+$grayDarker:            #333 !default;
+$grayDark:              #999 !default;
+$gray:                  #9D9DA0 !default;
+$grayLight:             #CED2D6 !default;
+$white:                 #fff !default;
+
+$red:                   #e82e2e !default;
+$blue:                  #3b83c0 !default;
+$orange:                #e07b53 !default;
+$green:                 #5bbd72 !default;
+$yellow:                #EDC96A !default;
+$pink:                  #d9499a !default;
+$purple:                #564f8a !default;
+
+
+
+$linkColor:             $grayDarker $red !default;
+
+
+$bodyBgColor:           #FFF !default;
+$textColor:             $grayDarker !default;
+
+$placeholder:           true $grayLight !default;
+
+
+
+$disabledColor:			#666 #e0e0e0 transparent !default;
+$defaultColor:			#5a5a5a $white #dfdfdf !default;
+$primaryColor:			$white $blue transparent !default;
+$warningColor:          #514721 #FFF6BF #FFD324 !default;
+$errorColor:            #8A1F11 #FBE3E4 #FBC2C4 !default;
+$successColor:          #264409 #E6EFC2 #C6D880 !default;
+$infoColor:             #205791 #D5EDF8 #92CAE4 !default;
+
+
+$baseRadius:            5px !default;
+$smallRadius:           3px !default;
+
+
+$zindexDefault:			100 !default;
+$zindexDropdown:        1000 !default;
+$zindexFixedTopbar:     1010 !default;
+$zindexTooltip:         1020 !default;
+$zindexAlert:           1030 !default;
+$zindexModal:           1100 !default;

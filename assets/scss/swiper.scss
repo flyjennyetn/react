@@ -1,0 +1,329 @@
+.spectatorsGuide{
+  .swiper-container {
+    height: 220px;
+    .swiper-wrapper {
+      justify-content: space-between;
+      top:5px;
+      .swiper-slide {
+        width: 52%;
+        margin-right: -10px;
+        margin-left: -10px;
+        -webkit-transition: 300ms;
+        transition: 300ms;
+        -webkit-transform: scale(0.84);
+        transform: scale(0.84);
+        position: relative;
+        img{
+          width: 100%;
+        }
+      }
+      .swiper-slide-active {
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+      }
+    }
+    .swiper-pagination{
+      bottom: -6px;
+      .swiper-pagination-bullet {
+        margin: 0 15px;
+        background: #728ea4;
+        width: 18px;
+        height: 18px;
+      }
+      .swiper-pagination-bullet-active{
+        background: #ffffff;
+        width: 36px;
+        border-radius:36px
+      }
+    }
+  }
+  .box5{
+    .swiper-pagination{
+          bottom:-4px;
+         .swiper-pagination-bullet {
+           background: #9dc5f7;
+         }
+         .swiper-pagination-bullet-active{
+           background: #1b7ef7;
+         }
+     }
+  }
+  .box6{
+    .swiper-container{
+        height: 300px;
+        .swiper-wrapper{
+          justify-content: space-between;
+            height: auto;
+            top: 120px;
+            .swiper-slide {
+              width: 704px!important;
+              display: flex;
+              -webkit-transition: 300ms;
+              transition: 300ms;
+              -webkit-transform: scale(1);
+              transform: scale(1);
+              position: relative;
+              img{
+                display: inline;
+                width: 354px;
+                height: 199px;
+              }
+            }
+            .swiper-slide-active {
+              top: 0;
+              opacity: 1;
+              -webkit-transform: scale(1);
+              transform: scale(1);
+            }
+        }
+        .swiper-pagination{
+          overflow-x: hidden;
+          margin-left: 67px;
+          width: 550px;
+          height: 87px;
+          overflow: hidden;
+          white-space:nowrap;
+          top: 10px;
+          .swiper-pagination-bullet {
+            font-size: 42px;
+            margin: 0 10px;
+            background: url("./../../src/pages/SpectatorsGuide/images/p.png") no-repeat;
+            background-size: 100% 100%;
+            color: #ffffff;
+            width: 87px;
+            height: 87px;
+            line-height: 87px;
+          }
+          .swiper-pagination-bullet-active{
+            background: url("./../../src/pages/SpectatorsGuide/images/p-a.png") no-repeat;
+            background-size: 100% 100%;
+            color: #ef5f26;
+          }
+        }
+        .swiper-button-prev{
+          margin-top: 0px;
+          width: 23px;
+          height: 47px;
+          background: url("./../../src/pages/SpectatorsGuide/images/p-l.png") no-repeat;
+          background-size: 100% 100%;
+          top: 25px;
+        }
+        .swiper-button-next{
+          margin-top: 0px;
+          width: 23px;
+          height: 47px;
+          background: url("./../../src/pages/SpectatorsGuide/images/p-r.png") no-repeat;
+          background-size: 100% 100%;
+          top: 25px;
+        }
+    }
+  }
+}
+
+.neujahrMatch{
+  .box1_1{
+    .swiper-container {
+      z-index: 9;
+      .swiper-wrapper{
+        -webkit-transition-timing-function: linear; 
+        -moz-transition-timing-function: linear;
+        -ms-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        transition-timing-function: linear;
+        margin: 0 auto;
+        .swiper-slide {
+          img{
+            width: 100%
+          }
+        }
+
+      }
+    }
+  }  
+  .box1_2{
+    .swiper-container {
+      top:-154px;
+      .swiper-wrapper{
+        .swiper-slide {
+          img{
+            width: 100%
+          }
+        }
+      }
+    }
+  }
+  .box2{
+    .swiper-container {
+      height:620px;
+      .swiper-wrapper{
+        // justify-content: space-between;
+        // left: -80px;
+        height:582px;
+        .swiper-slide {
+            // display: flex;
+            // margin: 0 -10px;
+            // width:88%!important;
+            // width:684px!important;
+            -webkit-transition: 300ms;
+            transition: 300ms;
+            -webkit-transform: scale(0.92);
+            transform: scale(0.92);
+            text-align: center;
+            img{
+              width:90%;
+            }
+        }
+        .swiper-slide-active {
+              -webkit-transform: scale(1);
+              transform: scale(1);
+        }
+      }
+      .swiper-pagination{
+        bottom: 10px;
+        .swiper-pagination-bullet {
+          margin: 0 10px;
+          background: #000;
+          width: 54px;
+          border-radius:36px;
+          height: 18px;
+          opacity:0.5
+        }
+        .swiper-pagination-bullet-active{
+          background: #ffffff;
+          opacity:1
+        }
+      }
+    }
+  }
+  .box3{
+    .swiper-container{
+        top:120px;
+        height:580px;
+        .swiper-wrapper{
+            justify-content: space-between;
+            height: auto;
+            top: 120px;
+            .swiper-slide {
+              display: flex;
+              -webkit-transition: 300ms;
+              transition: 300ms;
+              -webkit-transform: scale(1);
+              transform: scale(1);
+              position: relative;
+              img{
+                display: inline;
+                width:600px;
+                height: 458px
+              }
+            }
+            .swiper-slide-active {
+              top: 0;
+              opacity: 1;
+              -webkit-transform: scale(1);
+              transform: scale(1);
+            }
+        }
+        .swiper-pagination{
+          overflow-x: hidden;
+          margin-left: 67px;
+          width: 480px;
+          height: 87px;
+          overflow: hidden;
+          white-space:nowrap;
+          top: 16px;
+          .swiper-pagination-bullet {
+            color: #3a2711;
+            font-size: 26px;
+            margin: 0 10px;
+            background-size: 100% 100%;
+            color: #ffffff;
+            width: 68px;
+            height: 66px;
+            line-height: 62px;
+          }
+          .swiper-pagination-bullet-active{
+            background: url("./../../src/pages/NeujahrMatch/images/p.png") no-repeat;
+            background-size: 100% 100%;
+            color: #ffffff;
+          }
+        }
+        .swiper-button-prev{
+          margin-top: 0px;
+          width: 25px;
+          height: 43px;
+          background: url("./../../src/pages/NeujahrMatch/images/p-l.png") no-repeat;
+          background-size: 100% 100%;
+          top: 25px;
+        }
+        .swiper-button-next{
+          margin-top: 0px;
+          width: 25px;
+          height: 43px;
+          background: url("./../../src/pages/NeujahrMatch/images/p-r.png") no-repeat;
+          background-size: 100% 100%;
+          top: 25px;
+        }
+    }
+  }
+}
+
+.januaryGuide{
+  .swiper-container {
+    height: 220px;
+    .swiper-wrapper {
+      top:-15px;
+      justify-content: space-between;
+      .swiper-slide {
+        width: 53%!important;
+        margin-right: -10px;
+        margin-left: -10px;
+        -webkit-transition: 300ms;
+        transition: 300ms;
+        -webkit-transform: scale(0.84);
+        transform: scale(0.84);
+        position: relative;
+        img{
+          width: 100%;
+        }
+      }
+      .swiper-slide-active {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+      }
+    }
+    .swiper-pagination{
+      bottom: -6px;
+      .swiper-pagination-bullet {
+        margin: 0 15px;
+        background: #5b5b5b;
+        width: 54px;
+        border-radius:36px
+      }
+      .swiper-pagination-bullet-active{
+        background: #a051f3;
+        width: 54px;
+        border-radius:36px
+      }
+    }
+  }
+  .box2{
+    .swiper-container {
+        bottom:-50px;
+    }
+  }
+  .box3{
+    .swiper-container {
+        bottom:50px;
+    }
+  }
+  .box4{
+    .swiper-container {
+        bottom:50px;
+    }
+  }
+  .box5{
+    .swiper-container {
+        bottom:50px;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.ausOpenActJan{
+	margin: 0px;
+	background: #005972;
+	.wrapper_bg_1 {
+		width: 100%;
+		height: 800px;
+		background: url("./images/wrapper_bg_1.png") center center no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+		.roles {
+			width: 107px;
+			height: 31px;
+			position: absolute;
+			right: 45px;
+			top: 44px;
+		}
+	    .box{
+	      	position: absolute;
+	      	right: 69px;
+	      	bottom: 74px;
+	      	width: 244px;
+	      	height: 105px;
+	      	font-size: 0px;
+	      	a {
+	      		display: block;
+	      		width: 100%;
+	      		height: 100%;
+	      	}
+	    }
+	}
+	.wrapper_bg_2 {
+		width: 100%;
+		height: 1140px;
+		margin-top: -1px;
+		background: url("./images/wrapper_bg_2.png") center center no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+	}
+	.wrapper_bg_3 {
+		width: 100%;
+		height: 996px;
+		background: url("./images/wrapper_bg_3.png") center center no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+	}
+}
+.rulesBox {
+	position: relative;
+	height: 935px;
+	.closeBtn {
+		position: absolute;
+		left: 50%;
+		margin-left: -36px;
+		bottom: 0;
+		width: 72px;
+		height: 72px;
+		background: url("./images/sales-close-btn.png") center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.rulesBg {
+		// width: 100%;
+		height: 850px;
+		background-color: #333;
+		border-radius: 10px;
+		padding: 25px;
+		h3 {
+			color: #fff;
+			font-size: 50px;
+			font-weight: bolder;
+			text-align: center;
+			line-height: 1;
+			margin-bottom: 35px;
+		}
+		p {
+			text-align: left;
+			color: #fff;
+			font-size: 26px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+	}
+	@media only screen  and (min-device-width : 768px)  and (max-device-width : 1024px)  and (orientation : landscape){  
+  		height: 500px;
+  		.rulesBg {
+  			height: 400px;
+  			h3 {
+  				font-size: 25px;
+  			}
+  			p {
+				font-size: 16px;
+			}
+  		}
+	}
+}

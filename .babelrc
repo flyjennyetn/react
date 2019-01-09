@@ -1,51 +1,40 @@
 {
-  "presets": [
-    "react",
-    "es2015",
-    "stage-0"
-  ],
-  "plugins": [
-    "babel-plugin-transform-decorators-legacy",
-    [
-      "import",
-      {
-        "style":"css",
-        "libraryName": "antd-mobile"
-      }
-    ],
-    [
-      "module-alias",
-      [
-        {
-          "src": "./app/utils",
-          "expose": "utils"
-        },
-        {
-          "src": "./app/components",
-          "expose": "components"
-        },
-        {
-          "src": "./assets",
-          "expose": "assets"
-        }
-      ]
-    ]
-  ],
-  "env": {
-    // only enable it when process.env.NODE_ENV is 'development' or undefined
-    "development": {
-      "plugins": [
-        "react-hot-loader/babel",
+    "presets": [
         [
-          "transform-runtime",
+          "env",
           {
-            "helpers": false,
-            "polyfill": false,
-            "regenerator": true,
-            "moduleName": "babel-runtime"
+            "modules": false
           }
-        ]
-      ]
+        ],
+        "react",
+        "stage-0"
+    ],
+    "plugins": [
+        ["import", {
+          "libraryName": "antd-mobile",
+          "style": "css" 
+        }],
+      [
+        "transform-runtime",
+        {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true,
+          "moduleName": "babel-runtime"
+        }
+      ],
+        "transform-async-to-generator",
+        "transform-strict-mode",
+        "transform-object-assign",
+        "transform-decorators-legacy",
+        "syntax-dynamic-import"
+    ],
+    "env": {
+        "development": {
+            "plugins": [
+                "react-hot-loader/babel"
+            ]
+        }
     }
-  }
+
 }
