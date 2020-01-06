@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "start": "cross-env NODE_ENV=development node client/server.js --progress --colors --profile",
-        "build": "cross-env NODE_ENV=production webpack --progress --colors --profile webpack.config.js",
+        "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     },
     "keywords": [],
     "author": "flyjennyetn",
