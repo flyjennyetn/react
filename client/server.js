@@ -1,19 +1,29 @@
 /**
- * Created by flyjennyetn on 2016-10-26.
+ * Created by flyjennyetn on 2018-11-12
  */
-import webpack from 'webpack';
-import WebpackDevServer from 'webpack-dev-server';
-import config from '../webpack.config';
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('../webpack.config');
 
 new WebpackDevServer(webpack(config), {
-    publicPath: config.output.publicPath,
     hot: true,
     historyApiFallback: true,
+    disableHostCheck: true,
     // It suppress error shown in console, so it has to be set to false.
     quiet: false,
     // It suppress everything except error, so it has to be set to false as well
     // to see success build.
     noInfo: false,
+    proxy: {
+        '/matchData': {
+            target: 'http://www.ssports.com',
+            changeOrigin: true
+        },
+        '/api': {
+            target: 'http://www.ssports.com',
+            changeOrigin: true
+        }
+    },
     stats: {
         // Config for minimal console.log mess.
         assets: false,
@@ -24,9 +34,9 @@ new WebpackDevServer(webpack(config), {
         chunks: false,
         chunkModules: false
     }
-}).listen(3333, 'localhost', function (err) {
+}).listen(1234, '0.0.0.0', function(err) {
     if (err) {
         console.log(err);
     }
-    console.log('Listening at http://localhost:3333');
+    console.log('Listening at http://localhost:1234');
 });

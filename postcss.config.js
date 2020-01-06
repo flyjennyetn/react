@@ -1,10 +1,11 @@
 module.exports = {
-    parser:'postcss-scss',
+    parser: 'postcss-scss',
     plugins: {
         'precss': {},
         'autoprefixer': {},
+        'postcss-flexbugs-fixes': {},
         'postcss-pxtorem': {
-            rootValue: 100,
+            rootValue: 75,
             propWhiteList: [],
         }
     }
